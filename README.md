@@ -1,27 +1,36 @@
-This is the ObjectScript client for IRIS NativeAPI Command extension  
-It is not a click-and-run code but a draft that requires   
-adjustments for your special needs    
-you have to add   
+A utility using IRIS NativeAPI to View, Copy, and Merge Globals    
+This code runs rather slowly and creates a lot of network traffic.   
+*Background:*      
+As $QUERY is not supported by Native API  it is a rather long and     
+boring workaround with the functions **IsDefined** (aka $DATA) and       
+**GetNext** (aka $ORDER) to examine all Global nodes with value   
+and passing the *structural* nodes.
+
+You have to provide   
 - your credentials for server access    
-- your level of error handling    
-First,    
-you make a connection to the target SuperServer Port    
+- your level of error handling
+-  
+First, you make a connection to the target SuperServer Port
+    
 ````   
 do ##class(nacl.Client).Connect("192.168.0.99",41773)   
 ````    
-
-Then you launch your command for remote execution      
+- VIEW and COPY are the same code   
+- VIEW is simply a COPY to NUL device
+- The target in COPY can have a different name
+- Using a local variable as target mimics the MERGE command
+- Start and Stop Subscript allow partial operation
+- Stop Subscript is the first to be excluded.
 
 ````   
-USER>write ##class(nacl.Client).Do(" quit $now() ")
-   
-66698,68259.396554358
+Do ##class(nacl.GVC).Connect(serverIP,serverPORT,namespace,username,password)    
 
-USER>write ##class(nacl.Client).Do(" quit $ZV ")
+Do ##class(nacl.GVC).View(globalname,startsubscript,stopstcsript)    
 
-IRIS for UNIX (Ubuntu Server LTS for x86-64 Containers) 2023.2 (Build 227U) Mon Jul 31 2023 18:04:28 EDT   
-````  
- 
+Do ##class(nacl.GVC).Copy(globalname,startsubscript,stopstcsript,targetname)    
+````
+Copy writes a View of the crated output.    
+
 ### Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.    
 
@@ -41,33 +50,15 @@ Run the IRIS container with your project:
 docker-compose up -d --build    
 ````
 ## How to Test it    
-
 ````
-docker-compose exec iris iris session iris    
-````   
+docker-compose exec iris iris session iris
 
-A simple remote global lister  
-````
+![image](https://github.com/rcemper/native-api-global-view-and-copy/assets/31236645/c9ba7cce-8d13-4321-b967-172985ea9d63)
 
- gl ; list remote Global
+   
+Copy writes a View of the crated output.     
+  
 
-   set global="^dc.MultiD"  ;; adjust as required    
-
-   set a=%rccdb.Function("%ZX","","quit $LB($D("_global_",%rcc),%rcc)")    
-
-   Write !,global," = ",$li(a,2)," $DATA = ",$li(a),!     
-
-   if $li(a)#10 {    
-     for {     
-      set a=%rccdb.Function("%ZX","","q $LB($q(@$zr),@$ZR)")   
-      quit:$li(a)=""    
-      write $li(a), " = ", ##class(%Utility).FormatString($li(a,2)),!    
-      }    
-    }    
- Write "-------done----------",!   
-
-````
-
-[Article in DC](https://community.intersystems.com/post/remote-global-listing-using-nativeapi-objectscript-2)
+[Article in DC](https://community.intersystems.com/post/remote-global-listing-using-nativeapi-objectscript-1)
   
         
