@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="nacl-client.ZPM">
+  <Document name="nacl-gv.ZPM">
     <Module>
-      <Name>nacl-client</Name>
-	  <Description>Use NativeAPI command line client</Description> 
+      <Name>nacl-gv</Name>
+	  <Description>Use NativeAPI for global view</Description> 
       <Version>0.0.1</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
       <Resource Name="nacl.PKG"/>
+      <Resource Name="dc.MultiDv.GBL"/>
     </Module>
   </Document>
 </Export>
