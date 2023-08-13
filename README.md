@@ -24,14 +24,13 @@ do ##class(nacl.Client).Connect("192.168.0.99",41773)
 - Start and Stop Subscript allow partial operation    
 - Stop Subscript is the first to be excluded.    
 
-````   
+<p>><pre>  
 Do ##class(nacl.GVC).Connect(serverIP,serverPORT,namespace,username,password)    
-
 Do ##class(nacl.GVC).View(globalname,startsubscript,stopstcsript)    
-
 Do ##class(nacl.GVC).Copy(globalname,startsubscript,stopstcsript,targetname)    
-````
-Copy writes a View of the crated output.    
+</pre>></p>   
+
+Copy writes a View of the created output.    
 
 ### Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.    
