@@ -53,7 +53,8 @@ docker-compose up -d --build
 ````
 docker-compose exec iris iris session iris
 ````
-<img  width="60%" src="https://openexchange.intersystems.com/mp/img/packages/3321/screenshots/n7p6gzqzopv02zn0lqhcowu88.jpg">
+
+<img  width="80%" src="https://openexchange.intersystems.com/mp/img/packages/3321/screenshots/n7p6gzqzopv02zn0lqhcowu88.jpg">
    
 Copy writes a View of the created output.       
   
