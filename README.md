@@ -53,7 +53,7 @@ docker-compose up -d --build
 ````
 docker-compose exec iris iris session iris
 ````
-![image](https://github.com/rcemper/native-api-global-view-and-copy/blob/ca8282b2a14da37623c3c29ce7b1ce6f1ad4d22b/GVC.JPG)
+![](https://github.com/rcemper/native-api-global-view-and-copy/blob/main/GVC.JPG)
    
 Copy writes a View of the created output.       
   
