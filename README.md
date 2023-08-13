@@ -1,5 +1,7 @@
-A utility using IRIS NativeAPI to View, Copy, and Merge Globals    
+A utility using IRIS NativeAPI to View, Copy, and Merge Globals     
 This code runs rather slowly and creates a lot of network traffic.   
+**!! There is no need for any additional code on the source server !!**   
+
 *Background:*      
 As $QUERY is not supported by Native API  it is a rather long and     
 boring workaround with the functions **IsDefined** (aka $DATA) and       
