@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="nacl-gv.ZPM">
+  <Document name="nacl-gvc.ZPM">
     <Module>
-      <Name>nacl-gv</Name>
+      <Name>nacl-gvc</Name>
 	  <Description>Use NativeAPI for global view</Description> 
       <Version>0.0.1</Version>
       <Packaging>module</Packaging>
