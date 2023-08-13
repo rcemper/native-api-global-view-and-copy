@@ -23,12 +23,11 @@ do ##class(nacl.Client).Connect("192.168.0.99",41773)
 - Using a local variable as target mimics the MERGE command    
 - Start and Stop Subscript allow partial operation    
 - Stop Subscript is the first to be excluded.    
-
-<p>><pre>  
+<p><pre> 
 Do ##class(nacl.GVC).Connect(serverIP,serverPORT,namespace,username,password)    
 Do ##class(nacl.GVC).View(globalname,startsubscript,stopstcsript)    
 Do ##class(nacl.GVC).Copy(globalname,startsubscript,stopstcsript,targetname)    
-</pre>></p>   
+</pre></p>   
 
 Copy writes a View of the created output.    
 
