@@ -15,7 +15,7 @@ ClassMethod Connect(
   catch { zw  b  }  ;; do some error handling
   quit %rccdb
 }
-Class View(global As %String = "",
+ClassMethod View(global As %String = "",
 	fromsubscript As %List = "",
 	tosubscript As %List = "")
 {
