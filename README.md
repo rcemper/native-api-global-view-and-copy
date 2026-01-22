@@ -1,3 +1,6 @@
+<img src="https://community.intersystems.com/sites/default/files/inline/images/archived.gif" width=100></img>
+<b>&nbsp;no maintenance or update</b>  
+
 A utility using IRIS NativeAPI to View, Copy, and Merge Globals     
 This code runs rather slowly and creates a lot of network traffic.   
 **!! There is no need for any additional code on the source server !!**   
@@ -61,3 +64,4 @@ Copy writes a View of the created output.
 [Article in DC](https://community.intersystems.com/post/remote-global-listing-using-nativeapi-objectscript-1)
   
         
+
